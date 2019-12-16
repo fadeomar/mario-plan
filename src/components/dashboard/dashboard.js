@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Notifications from './notification';
+import ProjectList from '../projects/projectList';
 
 class Dashboard extends Component {
   state = {};
@@ -8,8 +9,10 @@ class Dashboard extends Component {
     return (
       <div className="dashboard container">
         <div className="row">
-          <div className="co1 s12 m6" />
-          <div className="co1 s12 m5 offest-m1">
+          <div className="col s12 m6">
+            <ProjectList />
+          </div>
+          <div className="col s12 m5 offest-m1">
             <Notifications />
           </div>
         </div>

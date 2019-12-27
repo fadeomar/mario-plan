@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+fadi things :
+
+be careful guz react-redux-firebase have its breaking changes you might fell into 
+`typeerror object(...) is not a function` something like this issue
+
+you can install exact packages to be safe from gettting error or you can look into updated documentation
+npm install --save react-redux-firebase@2.1.8
+npm install --save redux-firestore@0.5.7

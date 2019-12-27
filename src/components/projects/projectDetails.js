@@ -5,7 +5,6 @@ import { compose } from 'redux';
 
 const ProjectDetails = props => {
   const { id } = props.match.params;
-  console.log(id);
   return (
     <div className="container section project-details">
       <div className="card z-depth-0">
@@ -23,8 +22,8 @@ const ProjectDetails = props => {
 };
 
 const mapStateToProps = (state, prevProps) => {
-  const {id} = prevProps.match.params;
-  const {projects} = state.firestore.data;
+  const { id } = prevProps.match.params;
+  const { projects } = state.firestore.data;
   const project = projects ? projects[id] : null;
   return {
     project,

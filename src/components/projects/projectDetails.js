@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { firebaseConnect, firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 const ProjectDetails = props => {
   const { id } = props.match.params;
@@ -19,4 +22,16 @@ const ProjectDetails = props => {
   );
 };
 
-export default ProjectDetails;
+const mapStateToProps = (state, prevProps) => {
+  const {id} = prevProps.match.params;
+  const {projects} = state.firestore.data;
+  const project = projects ? projects[id] : null;
+  return {
+    project,
+  };
+};
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: 'projects' }])
+)(ProjectDetails);

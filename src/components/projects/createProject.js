@@ -13,6 +13,7 @@ class CreateProject extends Component {
     const { createProject } = this.props;
     e.preventDefault();
     createProject(this.state);
+    this.props.history.push('/');
   };
 
   handleChange = e => {

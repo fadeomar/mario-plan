@@ -14,7 +14,6 @@ class Dashboard extends Component {
     if (!auth.uid) {
       return <Redirect to="/signin" />;
     }
-    console.log(notifications, 'notifications');
     return (
       <div className="dashboard container">
         <div className="row">
